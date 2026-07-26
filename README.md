@@ -52,9 +52,7 @@ The table below show the system prompt for Iteration 42 and Iteration 43, which 
 
 # Dataset Description
 
-Each CSV file contains the generated review together with the linguistic and readability metrics calculated during the experiments.
-
-Typical variables include:
+Each CSV file contains the GPT-generated reviews together with linguistic and readability metrics calculated during the experiments.
 
 | Variable | Description |
 |----------|-------------|
