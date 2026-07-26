@@ -4,7 +4,7 @@ This repository contains AI-generated fake reviews generated as part of the stud
 
 **Prompting Credibility: Risks of Zero-Shot Prompting and Prompt Engineering for Fake Review Generation**
 
-The study investigates whether **zero-shot prompt engineering** can be used to generate fake online reviews that mimic genuine review characteristics. Guided by **Information Manipulation Theory (IMT)**, the experiments systematically manipulate textual, readability, sentiment, and temporal prompt constraints to evaluate the similarity between AI-generated fake reviews and genuine Yelp reviews, as well as the impact on fake review detection. Figure 1 provides an overview of the complete experimental workflow.
+The study investigates whether **zero-shot prompt engineering** can be used to generate fake online reviews that mimic genuine review characteristics. Guided by **Information Manipulation Theory (IMT)**, the experiments systematically manipulate textual, readability, sentiment, and temporal prompt constraints to evaluate the similarity between AI-generated fake reviews and genuine Yelp reviews, as well as the impact on fake review detection. The study comprises **19 prompt engineering experiments**, **356 experimental iterations**, and approximately **225,500 AI-generated fake reviews**. Figure 1 provides an overview of the complete experimental workflow.
 
 <p align="center">
   <img src="Figure1_Seven_step methodological process.jpg" alt="Experimental workflow" width="900">
@@ -12,51 +12,11 @@ The study investigates whether **zero-shot prompt engineering** can be used to g
 
 *Figure 1. Experimental workflow of the study.*
 
-The repository currently provides the **GPT-generated fake reviews** (GPT-4.1) together with all automatically extracted review metrics used throughout the experiments.
-
-
----
-
-# Dataset Description
-
-Each CSV file contains the generated review together with the linguistic and readability metrics calculated during the experiments.
-
-Typical variables include:
-
-| Variable | Description |
-|----------|-------------|
-| rating | Target star rating (1–5) |
-| review | GPT-generated review |
-| num_char | Number of characters |
-| num_words | Number of words |
-| num_sentences | Number of sentences |
-| avg_sentence_length | Average sentence length |
-| syllables | Number of syllables |
-| FKGL | Flesch–Kincaid Grade Level |
-| FRES | Flesch Reading Ease Score |
-| FOG | Gunning Fog Index |
-| CLI | Coleman–Liau Index |
-| ARI | Automated Readability Index |
-| DCRS | Dale–Chall Readability Score |
-| polarity | Sentiment polarity |
-| subjectivity | Subjectivity score |
-| positive | Positive sentiment |
-| neutral | Neutral sentiment |
-| negative | Negative sentiment |
-| prediction_lr | Logistic Regression prediction |
-| prediction_xgb | XGBoost prediction |
-| prediction_roberta | RoBERTa prediction |
-
----
-
-# Experimental Design
-
-The study comprises **19 prompt engineering experiments**, **356 experimental iterations**, and approximately **225,500 AI-generated fake reviews**.
-
-Due to the large number of experimental iterations and AI-generated fake reviews, this repository currently provides the generated reviews and accompanying documentation for the final **Combining Best Practices** experiment, Combining Best Practices.
+Due to the large number of experimental iterations and AI-generated fake reviews, this repository currently provides the **GPT-generated fake reviews** (GPT-4.1) together with all automatically extracted review metrics and accompanying documentation for the final **Combining Best Practices** experiment, Combining Best Practices.
 This experiment combines the best-performing prompt engineering strategies identified throughout the preceding experiments and serves as the final evaluation reported in the manuscript.
 
 The repository therefore provides the AI-generated fake reviews together with all calculated review metrics for each iteration of the **Combining Best Practices** experiment.
+
 
 ---
 
@@ -87,6 +47,37 @@ The table below show the system prompt for Iteration 42 and Iteration 43, which 
 |---|---|---|
 | *You are simulating a restaurant customer writing detailed reviews. Your tone should match an enthusiastic, delighted, and highly satisfied experience. All responses should reflect the style of reviews written in 2018.* | [`combined_prompt_42_gen_sampled.csv`](combined_prompt_42_gen_sampled.csv), [`combined_prompt_43_gen_sampled.csv`](combined_prompt_43_gen_sampled.csv) | Write exactly 10 unique restaurant reviews based on a 5-star experience. Use a tone and language style consistent with 2018 online reviews.<br><br>Guidelines:<br>-Sentence Count:<br>&nbsp;&nbsp;&nbsp;&nbsp;- Average: 6.85 sentences<br>&nbsp;&nbsp;&nbsp;&nbsp;- Range: 1 to 22 sentences<br>&nbsp;&nbsp;&nbsp;&nbsp;- Must vary by at least 4.27 sentences between reviews<br>-Flesch–Kincaid Grade Level:<br>&nbsp;&nbsp;&nbsp;&nbsp; - Average: 5.66<br>&nbsp;&nbsp;&nbsp;&nbsp; - Range: 1.90–21.20<br>&nbsp;&nbsp;&nbsp;&nbsp; - Must vary by at least 2.47 points<br>-Neutral Sentiment:<br>&nbsp;&nbsp;&nbsp;&nbsp; - Mean: 0.7<br>&nbsp;&nbsp;&nbsp;&nbsp; - Range: 0.24 to 0.93<br>&nbsp;&nbsp;&nbsp;&nbsp; - Must vary by at least 0.12<br>-Subjectivity:<br>&nbsp;&nbsp;&nbsp;&nbsp;- Mean: 0.6<br>&nbsp;&nbsp;&nbsp;&nbsp;- Range: 0.00 to 0.88<br>&nbsp;&nbsp;&nbsp;&nbsp;- Must vary by at least 0.12<br><br>Ensure all reviews sound natural, match the specified tone, and align with user-written content from the specified period. |
 
+---
 
+
+# Dataset Description
+
+Each CSV file contains the generated review together with the linguistic and readability metrics calculated during the experiments.
+
+Typical variables include:
+
+| Variable | Description |
+|----------|-------------|
+| rating | Target star rating (1–5) |
+| review | GPT-generated review |
+| num_char | Number of characters |
+| num_words | Number of words |
+| num_sentences | Number of sentences |
+| avg_sentence_length | Average sentence length |
+| syllables | Number of syllables |
+| FKGL | Flesch–Kincaid Grade Level |
+| FRES | Flesch Reading Ease Score |
+| FOG | Gunning Fog Index |
+| CLI | Coleman–Liau Index |
+| ARI | Automated Readability Index |
+| DCRS | Dale–Chall Readability Score |
+| polarity | Sentiment polarity |
+| subjectivity | Subjectivity score |
+| positive | Positive sentiment |
+| neutral | Neutral sentiment |
+| negative | Negative sentiment |
+| prediction_lr | Logistic Regression prediction |
+| prediction_xgb | XGBoost prediction |
+| prediction_roberta | RoBERTa prediction |
 
 ---
