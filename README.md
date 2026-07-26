@@ -75,6 +75,7 @@ Per-rating parameterization
 
 ---
 # Meta-Prompting 
+The table below show the system prompt for Iteration 42 and Iteration 43, which combine all best practices with Meta-Prompting for generating 5-star reviews. 
 
 | System Prompt | Iteration(s) | Example User Prompt (5-Star Reviews) |
 |---|---|---|
