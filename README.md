@@ -22,7 +22,7 @@ The repository therefore provides the AI-generated fake reviews together with al
 
 ## Prompting Prerequisites
 Although this repository focuses on the final Combining Best Practices Experiment, the key findings of the three experiments on prompting prerequisites are shortly documented in the following because they determined the prompting configuration adopted throughout the entire study.
-Before conducting the main experiments, three pretests were performed to identify suitable prompting settings: (1) output deviation across identical requests, (2) the maximum feasible number of reviews per API request, and (3) temperature for appropriate balance between diversity, authenticity, and output quality. 
+These three pretests were performed before conducting the main experiments to identify suitable prompting settings: (1) output deviation across identical requests, (2) the maximum feasible number of reviews per API request, and (3) temperature for appropriate balance between diversity, authenticity, and output quality. 
 The findings show that deviations across repeated runs were relatively consistent. However, we consider inter-iteration variability throughout the main experiments. Moreover, we use relatively small number of reviews per API request throughout the experiments because large API requests (>200 reviews per rating) frequently returned fewer reviews than requested and showed increasing deviations from genuine reviews. Lastly, temperatures between 0.8 and 1.2 yielded the best overall results. Thus, we use the default temperature value of 1 in all further experiments.
 
 ---
