@@ -60,7 +60,7 @@ The final experiment consists of multiple prompt engineering iterations. Each it
 Per-rating parameterization
 | Iteration | Prompt modification | Example prompt (5-star review) |
 |-----------|---------------------|--------------------------------|
-| combined_00, 01 | Baseline prompt | *Write exactly 10 reviews of a 5-star experience.* |
+| [`combined_prompt_00_gen_sampled.csv`](data/combined_prompt_00_gen_sampled.csv)| Baseline prompt | *Write exactly 10 reviews of a 5-star experience.* |
 | combined_02, 03 | Average number of sentences | *Write exactly 10 reviews of a 5 star experience. Generate reviews that are on average 7 sentences in length.* |
 | combined_04, 05 | Average, range, and standard deviation of the number of sentences | *Write exactly 10 reviews of a 5 star experience. Generate reviews that are on average 7 sentences in length and range from 1 to 22 sentences. Reviews must vary in length by 4 sentences.* |
 | combined_06, 07 | Sentence metrics and average Flesch–Kincaid Grade Level (FKGL) | *Write exactly 10 reviews of a 5 star experience. Generate reviews that are on average 7 sentences in length and range from 1 to 22 sentences. Reviews must vary in length by 4 sentences. The generated reviews must have a Flesch-Kincaid Grade Level of 5.7 on average.* |
