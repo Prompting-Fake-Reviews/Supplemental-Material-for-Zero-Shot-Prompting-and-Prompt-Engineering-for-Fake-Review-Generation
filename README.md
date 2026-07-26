@@ -4,7 +4,13 @@ This repository contains AI-generated fake reviews generated as part of the stud
 
 **Prompting Credibility: Risks of Zero-Shot Prompting and Prompt Engineering for Fake Review Generation**
 
-The study investigates whether **zero-shot prompt engineering** can be used to generate fake online reviews that mimic genuine review characteristics. Guided by **Information Manipulation Theory (IMT)**, the experiments systematically manipulate textual, readability, sentiment, and temporal prompt constraints to evaluate the similarity between AI-generated fake reviews and genuine Yelp reviews, as well as the impact on fake review detection.
+The study investigates whether **zero-shot prompt engineering** can be used to generate fake online reviews that mimic genuine review characteristics. Guided by **Information Manipulation Theory (IMT)**, the experiments systematically manipulate textual, readability, sentiment, and temporal prompt constraints to evaluate the similarity between AI-generated fake reviews and genuine Yelp reviews, as well as the impact on fake review detection. Figure 1 provides an overview of the complete experimental workflow.
+
+<p align="center">
+  <img src="Figure1_Seven_step methodological process.jpg" alt="Experimental workflow" width="900">
+</p>
+
+*Figure 1. Experimental workflow of the study.*
 
 The repository currently provides the **GPT-generated fake reviews** (GPT-4.1) together with all automatically extracted review metrics used throughout the experiments.
 
