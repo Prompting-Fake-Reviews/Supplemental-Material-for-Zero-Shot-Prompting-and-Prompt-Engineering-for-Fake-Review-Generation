@@ -1,7 +1,5 @@
 # AI-Generated Fake Review Dataset
 
-## Overview
-
 This repository contains AI-generated fake reviews generated as part of the study:
 
 **Prompting Credibility: Risks of Zero-Shot Prompting and Prompt Engineering for Fake Review Generation**
