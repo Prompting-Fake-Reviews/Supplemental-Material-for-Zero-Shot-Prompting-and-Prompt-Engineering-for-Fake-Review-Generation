@@ -6,7 +6,9 @@ This repository contains AI-generated fake reviews generated as part of the stud
 
 The study investigates whether **zero-shot prompt engineering** can be used to generate fake online reviews that mimic genuine review characteristics. Guided by **Information Manipulation Theory**, the experiments systematically manipulate textual (Quantity), readability (Quality), sentiment (Manner), and temporal (Relation) prompt constraints to evaluate the similarity (density functions, distance measures, and similarity based on words) between AI-generated fake reviews and genuine Yelp reviews, as well as the impact on fake review detection (Logistic Regression, XGBoost, and RoBERTa). The study comprises **19 prompt engineering experiments**, **356 experimental iterations**, and approximately **225,500 AI-generated fake reviews**. Figure 1 provides an overview of the complete experimental workflow.
 
-
+<p align="center">
+  <img src="Figure1_Seven_step methodological process.jpg" alt="Experimental workflow" width="900">
+</p>
 
 *Figure 1. Experimental workflow of the study.*
 
