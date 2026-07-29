@@ -59,7 +59,7 @@ The table below show the system prompt for Iteration 42 and Iteration 43, which 
 
 # Dataset Description
 
-Each CSV file contains the GPT-generated reviews together with calculated during the experiments.
+Each CSV file contains the GPT-generated reviews together with calculated metrics during the experiments.
 
 | Variable | Description |
 |----------|-------------|
