@@ -96,6 +96,23 @@ Figure 6 shows that targeting neutral sentiment, combinations of positive and ne
 
 *Figure 6. Sentiment Combinations Experiment. Mean differences in composite sentiment scores between authentic and generated reviews. Iterations 0 and 1 served as baselines without sentiment constraints. Subsequent iterations targeted positive (2, 3), negative (4, 5), neutral (6, 7), positive and negative (8, 9), or positive, negative, and neutral (10, 11) sentiment. The constrained configurations from Iterations 2–11 were repeated with a checking-and-rewriting system prompt in Iterations 12–21.*
 
+## Temporal Metrics
+Figure 7 shows changes in positive sentiment in genuine Yelp reviews and sentence-level generated reviews. Generated reviews did not reproduce the rating-specific temporal sentiment patterns observed in authentic reviews.
+
+<p align="center">
+  <img src="Figure7_Time series of positive sentiment.png" alt="Time series of positive sentiment" width="900">
+</p>
+
+*Figure 7 shows changes in positive sentiment in genuine Yelp reviews and sentence-level generated reviews. In genuine reviews, positive sentiment declined over time for 1-star and 2-star reviews, increased for 4-star and 5-star reviews, and remained stable for 3-star reviews, suggesting increasing sentiment polarization. Generated reviews did not reproduce these rating-specific temporal patterns.*
+
+Figure 8 shows that genuine reviews became progressively easier to read, as indicated by a declining average FOG score. Other readability measures, such as the FKGL and ARI, corroborated this trend. Generated fake reviews exhibited the opposite pattern, with FOG, FKGL, and ARI indicating increasing reading difficulty. The opposing trends suggest that the linguistic characteristics of generated fake reviews changed differently over time from those of genuine reviews.
+
+<p align="center">
+  <img src="Figure8_Time series of readability.png" alt="Time series of readability" width="900">
+</p>
+
+*Figure 8. FOG trajectories for authentic Yelp reviews from 2006 to 2015 (left) and generated fake reviews prompted for publication years from 2006 to 2024 (right).*
+
 ---
 
 # Combining Best Practices Experiment
