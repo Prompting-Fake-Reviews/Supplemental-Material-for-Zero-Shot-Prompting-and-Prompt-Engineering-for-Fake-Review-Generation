@@ -40,15 +40,15 @@ The following 15 experiments systematically examined how textual, readability, s
 | **Textual Rating** | 20 | Uniform versus rating-specific parameterization |
 | **Textual Syllables** | 18 | Number of syllables, monosyllabic words, and polysyllabic words |
 | **Readability Basics** | 40 | Absolute verbal descriptions (very easy, easy, moderately easy, difficult) versus relative descriptions (e.g., easier or slightly easier than reviews with the same star rating) |
-| **Readability Index** | 20 | Numerical values for FRES, FKGL, FOG, ARI, LWF, CLI, and DCRS versus verbal interpretation; even versus uneven values; one versus two indices |
+| **Readability Index** | 20 | Numerical values for FRES, FKGL, FOG, ARI, LWF, CLI, and DCRS versus verbal interpretation; even versus uneven values; one versus two indices from two correlation groups (ARI and CLI; FOG and CLI) |
 | **Readability Rating** | 32 | Uniform versus rating-specific parameterization; with versus without checking and rewriting; one versus two indices |
 | **Readability Variance** | 16 | Minimum/maximum and standard deviation; one versus two indices |
-| **Sentiment Basics** | 12 | Verbal versus numerical polarity instructions |
-| **Sentiment Context** | 12 | Simple versus complex explanation of the polarity scale; with versus without checking and rewriting |
-| **Sentiment Metrics** | 26 | Single versus multiple sentiment metrics; with versus without checking and rewriting; explanation of sentiment range in the system prompt |
-| **Sentiment Combinations** | 22 | Individual sentiment metrics versus combinations; with versus without checking and rewriting |
+| **Sentiment Basics** | 12 | Verbal (marginally more/less positive than is usual for a {rating} star rating) versus numerical addressing polarity|
+| **Sentiment Context** | 12 | Simple (Polarity ranges from -1 to 1) versus complex explanation of polarity (e.g., Polarity is a measurement of sentiment. It ranges from -1 to 1. -1 means that a text has very negative sentiment, 0 means a text has neutral sentiment, and 1 means a text has very positive sentiment.); with versus without checking and rewriting |
+| **Sentiment Metrics** | 26 | Single versus multiple metrics (sentiment and polarity); with versus without checking and rewriting; explanation of the sentiment range in the system prompt (You are a restaurant customer and you want to give 1 stars. Polarity is a measurement of sentiment. It ranges from -1 to 1. -1 means that a text has very negative sentiment, 0 means a text has neutral sentiment, and 1 means a text has very positive sentiment. Check if generated reviews match the requested sentiment or polarity and rewrite them as necessary.)|
+| **Sentiment Combinations** | 22 | Individual sentiment metrics (positive, neutral, negative) versus combinations (e.g., positive, negative, and neutral); with versus without checking and rewriting |
 | **Sentiment Variance** | 22 | Dispersion information |
-| **Subjectivity** | 10 | Subjectivity value with explanation of the range; minimum/maximum and standard deviation; with versus without checking and rewriting |
+| **Subjectivity** | 10 | Subjectivity value with a simple explanation of the subjectivity range; minimum/maximum and standard deviation; with versus without checking and rewriting |
 | **Temporal Information** | 20 | Publication year |
 
 ## Textual Metrics
