@@ -21,9 +21,27 @@ The repository therefore provides the AI-generated fake reviews together with al
 ---
 
 ## Prompting Prerequisites
-Although this repository focuses on the final Combining Best Practices Experiment, the key findings of the three experiments on prompting prerequisites are shortly documented in the following because they determined the prompting configuration adopted throughout the entire study.
+Although this repository focuses on the main experiments on optimizing review metrics and combining best practices, the key findings of the three experiments on prompting prerequisites are shortly documented in the following because they determined the prompting configuration adopted throughout the entire study.
 These three pretests were performed before conducting the main experiments to identify suitable prompting settings: (1) output deviation across identical requests, (2) the maximum feasible number of reviews per API request, and (3) temperature for appropriate balance between diversity, authenticity, and output quality. 
 The findings show that deviations across repeated runs were relatively consistent. However, we consider inter-iteration variability throughout the main experiments. Moreover, we use relatively small number of reviews per API request throughout the experiments because large API requests (>200 reviews per rating) frequently returned fewer reviews than requested and showed increasing deviations from genuine reviews. Lastly, temperatures between 0.8 and 1.2 yielded the best overall results. Thus, we use the default temperature value of 1 in all further experiments.
+
+---
+
+## Optimizing Review Metrics
+
+## Textual Metrics
+<p align="center">
+  <img src="Figure2_Textual Basics Experiment.png" alt="Textual Basics Experiment" width="900">
+</p>
+*Figure 2. Textual Basics Experiment. Average cosine TF-IDF similarity between authentic (A) and generated (G) reviews by rating (1–5 stars) for character-level (0–5), word-level (6–11), and sentence-level (12–17) prompts. At each level, two iterations tested minimum and maximum values, upper and lower quartiles, and mean length.*
+
+<p align="center">
+  <img src="Figure3_Textual Rating Experiment.png" alt="Textual Rating Experiment" width="900">
+</p>
+*Figure 3. Textual Rating Experiment. Differences in mean word count between authentic (A) and generated (G) reviews by rating (1–5 stars) for character-level (0–2, 10–12), word-level (3–5, 13–15), and sentence-level prompts (6–8, 16–18). Iterations 0–9 used the same parameterization for all ratings, whereas Iterations 10–19 used rating-specific parameterization. Iterations 9 and 19 combined character-, word-, and sentence-level constraints.*
+
+
+
 
 ---
 
