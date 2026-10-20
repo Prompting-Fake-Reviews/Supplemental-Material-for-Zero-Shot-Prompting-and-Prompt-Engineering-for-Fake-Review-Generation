@@ -1,10 +1,10 @@
 # AI-Generated Fake Review Dataset
 
-This repository contains AI-generated fake reviews generated as part of the study:
+This repository contains supplementary material as part of the study:
 
 **Prompting Credibility: Risks of Zero-Shot Prompting and Prompt Engineering for Fake Review Generation**
 
-The study investigates whether **zero-shot prompt engineering** can be used to generate fake online reviews that mimic genuine review characteristics. Guided by **Information Manipulation Theory**, the experiments systematically manipulate textual (Quantity), readability (Quality), sentiment (Manner), and temporal (Relation) prompt constraints to evaluate the similarity (density functions, distance measures, and similarity based on words) between AI-generated fake reviews and genuine Yelp reviews, as well as the impact on fake review detection (Logistic Regression, XGBoost, and RoBERTa). The study comprises **19 prompt engineering experiments**, **376 experimental iterations**, and approximately **225,500 AI-generated fake reviews**. Figure 1 provides an overview of the complete experimental workflow.
+The study investigates whether **zero-shot prompt engineering** can be used to generate fake online reviews that mimic genuine review characteristics. We use the **Information Manipulation Theory** as an organizing framework, and systematically manipulate textual, readability, sentiment, and temporal prompt constraints to evaluate the similarity (density functions, distance measures, and similarity based on words) between AI-generated fake reviews and genuine Yelp reviews, as well as the impact on fake review detection (Logistic Regression, XGBoost, and RoBERTa). The study comprises **19 prompt engineering experiments**, **376 experimental iterations**, and **235,500 AI-generated fake reviews**. Figure 1 provides an overview of the complete experimental workflow.
 
 <p align="center">
   <img src="Figure1_Seven_step methodological process.jpg" alt="Experimental workflow" width="900">
@@ -29,19 +29,70 @@ The findings show that deviations across repeated runs were relatively consisten
 
 ## Optimizing Review Metrics
 
+The following 15 experiments systematically examined how textual, readability, sentiment, subjectivity, and temporal constraints affect the characteristics of generated reviews. Best-performing constraints were carried forward to subsequent experiments.
+
+| Experiment | Iterations | Considered metrics / prompt variations |
+|---|---:|---|
+| **Textual Basics** | 18 | Mean, minimum/maximum, upper/lower quartiles for characters, words, and sentences |
+| **Textual Variance** | 12 | Standard deviation |
+| **Textual Rating** | 20 | Uniform versus rating-specific parameterization |
+| **Textual Syllables** | 18 | Number of syllables, monosyllabic words, and polysyllabic words |
+| **Readability Basics** | 40 | Absolute verbal descriptions (very easy, easy, moderately easy, difficult) versus relative descriptions (e.g., easier or slightly easier than reviews with the same star rating) |
+| **Readability Index** | 20 | Numerical values for FRES, FKGL, FOG, ARI, LWF, CLI, and DCRS versus verbal interpretation; even versus uneven values; one versus two indices |
+| **Readability Rating** | 32 | Uniform versus rating-specific parameterization; with versus without checking and rewriting; one versus two indices |
+| **Readability Variance** | 16 | Minimum/maximum and standard deviation; one versus two indices |
+| **Sentiment Basics** | 12 | Verbal versus numerical polarity instructions |
+| **Sentiment Context** | 12 | Simple versus complex explanation of the polarity scale; with versus without checking and rewriting |
+| **Sentiment Metrics** | 26 | Single versus multiple sentiment metrics; with versus without checking and rewriting; explanation of sentiment range in the system prompt |
+| **Sentiment Combinations** | 22 | Individual sentiment metrics versus combinations; with versus without checking and rewriting |
+| **Sentiment Variance** | 22 | Dispersion information |
+| **Subjectivity** | 10 | Subjectivity value with explanation of the range; minimum/maximum and standard deviation; with versus without checking and rewriting |
+| **Temporal Information** | 20 | Publication year |
+
 ## Textual Metrics
+We conducted four experiments on textual metrics. Figure 2 shows that prompting based on mean word or sentence length produced the highest similarity (Iterations 10, 11, 16, 17). 
+
 <p align="center">
   <img src="Figure2_Textual Basics Experiment.png" alt="Textual Basics Experiment" width="900">
 </p>
+
 *Figure 2. Textual Basics Experiment. Average cosine TF-IDF similarity between authentic (A) and generated (G) reviews by rating (1–5 stars) for character-level (0–5), word-level (6–11), and sentence-level (12–17) prompts. At each level, two iterations tested minimum and maximum values, upper and lower quartiles, and mean length.*
+
+Figure 3 shows that rating-specific prompts produced greater similarity. 
 
 <p align="center">
   <img src="Figure3_Textual Rating Experiment.png" alt="Textual Rating Experiment" width="900">
 </p>
+
 *Figure 3. Textual Rating Experiment. Differences in mean word count between authentic (A) and generated (G) reviews by rating (1–5 stars) for character-level (0–2, 10–12), word-level (3–5, 13–15), and sentence-level prompts (6–8, 16–18). Iterations 0–9 used the same parameterization for all ratings, whereas Iterations 10–19 used rating-specific parameterization. Iterations 9 and 19 combined character-, word-, and sentence-level constraints.*
 
+## Readability Metrics
+We conducted four experiments on readability metrics. 
+Figure 4 visualizes differences in mean FOG scores under the relative readability instructions (e.g., easier to read than authentic reviews). 
 
+<p align="center">
+  <img src="Figure4_Readability Basics Experiment.png" alt="Readability Basics Experiment" width="900">
+</p>
 
+*Figure 4. Readability Basics Experiment using relative verbal readability instruction. Mean differences in FOG between authentic and generated reviews. Iterations 0–9 used word-level constraints, and iterations 10–19 used sentence-level constraints for length. Iterations 0, 1, 10, and 11 were baselines without readability instructions. Subsequent iterations requested reviews that were easier (2, 3, 12, 13), marginally easier (4, 5, 14, 15), slightly easier (6, 7, 16, 17), or much easier (8, 9, 18, 19) to read than genuine reviews with the same star rating.*
+
+Figure 5 illustrates that the highest similarity was achieved using a single readability index without the 
+checking-and-rewriting system prompt .
+<p align="center">
+  <img src="Figure5_Readability Rating Experiment.png" alt="Readability Rating Experiment" width="900">
+</p>
+
+*Figure 5. Readability Rating Experiment. Mean differences in FOG between authentic and generated reviews. Iterations 0 and 16 were baselines without readability constraints. Iterations 1–15 used the checking-and-rewriting system prompt, whereas Iterations 17–31 did not. Iterations 1–7 and 17–23 targeted a single readability index, whereas Iterations 8–15 and 24–31 targeted two indices simultaneously.*
+
+## Sentiment Metrics
+We conducted six experiments on sentiment metrics. 
+Figure 6 shows that targeting neutral sentiment, combinations of positive and negative senti-ment, or all three sentiment dimensions produced closer alignment than targeting only positive or negative sentiment. These effects were strongest without the checking-and-rewriting system prompt (Iterations 6–11).
+
+<p align="center">
+  <img src="Figure6_Sentiment Combinations Experiment.png" alt="Sentiment Combinations Experiment" width="900">
+</p>
+
+*Figure 6. Sentiment Combinations Experiment. Mean differences in composite sentiment scores between authentic and generated reviews. Iterations 0 and 1 served as baselines without sentiment constraints. Subsequent iterations targeted positive (2, 3), negative (4, 5), neutral (6, 7), positive and negative (8, 9), or positive, negative, and neutral (10, 11) sentiment. The constrained configurations from Iterations 2–11 were repeated with a checking-and-rewriting system prompt in Iterations 12–21.*
 
 ---
 
