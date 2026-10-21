@@ -174,6 +174,24 @@ Each CSV file contains the GPT-generated reviews together with calculated metric
 ---
 
 ## Impact on Fake Review Detection
+We evaluated whether prompt engineering affected the detection performance of three classifi-ers: Logistic Regression, XGBoost, and RoBERTa.
+Logistic Regression and XGBoost were trained under unconstrained baseline training, mean-length-constrained training, and mean-length- and dispersion-constrained training.
+Detection performance was averaged across the two independent generation runs for each prompt configuration, resulting in 22 configuration-level observations.
+
+### Detection Performance
+
+Mean ± SD across the 22 prompt configurations.
+
+| Model | Training condition | Accuracy | Precision | Recall | F1 |
+|---|---|---:|---:|---:|---:|
+| **RoBERTa** | Pre-trained / fixed | .567 ± .061 | .647 ± .103 | .254 ± .121 | .358 ± .139 |
+| **Logistic Regression** | Baseline | .515 ± .103 | .339 ± .219 | .062 ± .207 | .077 ± .202 |
+|  | Length | .624 ± .096 | .718 ± .105 | .370 ± .192 | .474 ± .178 |
+|  | Length + Dispersion | .706 ± .074 | .734 ± .056 | .631 ± .149 | .674 ± .112 |
+| **XGBoost** | Baseline | .555 ± .095 | .672 ± .105 | .170 ± .190 | .250 ± .176 |
+|  | Length | .794 ± .102 | .890 ± .126 | .645 ± .204 | .736 ± .192 |
+|  | Length + Dispersion | .883 ± .031 | .866 ± .009 | .905 ± .062 | .884 ± .035 |
+
 Figures 9 and 10 show detection performance of RoBERTa, Logistic Regression, and XGBoost across prompt configurations.
 
 <p align="center">
@@ -187,3 +205,11 @@ Figures 9 and 10 show detection performance of RoBERTa, Logistic Regression, and
 </p>
 
 *Figure 10. Fake review detection performance of Logistic Regression and XGBoost under unconstrained baseline training (a), mean-length-constrained training (c), and mean-length- and dispersion-constrained training (d).*
+
+Figure 11 illustrates the evolution of the average cosine similarity of embeddings across the 44 iterations.
+
+<p align="center">
+  <img src="Evolution of average cosine embedding similarities.png" alt="average cosine embedding similarities" width="900">
+</p>
+
+*Figure 11. Evolution of average cosine embedding similarities between authentic and generated reviews and among generated reviews across the 44 iterations.*
