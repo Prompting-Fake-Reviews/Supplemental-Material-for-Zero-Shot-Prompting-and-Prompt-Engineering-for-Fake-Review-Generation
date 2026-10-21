@@ -144,10 +144,7 @@ The table below show the system prompt for Iteration 42 and Iteration 43, which 
 | *You are simulating a restaurant customer writing detailed reviews. Your tone should match an enthusiastic, delighted, and highly satisfied experience. All responses should reflect the style of reviews written in 2018.* | [`combined_prompt_42_gen_sampled.csv`](combined_prompt_42_gen_sampled.csv), [`combined_prompt_43_gen_sampled.csv`](combined_prompt_43_gen_sampled.csv) | Write exactly 10 unique restaurant reviews based on a 5-star experience. Use a tone and language style consistent with 2018 online reviews.<br><br>Guidelines:<br>-Sentence Count:<br>&nbsp;&nbsp;&nbsp;&nbsp;- Average: 6.85 sentences<br>&nbsp;&nbsp;&nbsp;&nbsp;- Range: 1 to 22 sentences<br>&nbsp;&nbsp;&nbsp;&nbsp;- Must vary by at least 4.27 sentences between reviews<br>-Flesch–Kincaid Grade Level:<br>&nbsp;&nbsp;&nbsp;&nbsp; - Average: 5.66<br>&nbsp;&nbsp;&nbsp;&nbsp; - Range: 1.90–21.20<br>&nbsp;&nbsp;&nbsp;&nbsp; - Must vary by at least 2.47 points<br>-Neutral Sentiment:<br>&nbsp;&nbsp;&nbsp;&nbsp; - Mean: 0.7<br>&nbsp;&nbsp;&nbsp;&nbsp; - Range: 0.24 to 0.93<br>&nbsp;&nbsp;&nbsp;&nbsp; - Must vary by at least 0.12<br>-Subjectivity:<br>&nbsp;&nbsp;&nbsp;&nbsp;- Mean: 0.6<br>&nbsp;&nbsp;&nbsp;&nbsp;- Range: 0.00 to 0.88<br>&nbsp;&nbsp;&nbsp;&nbsp;- Must vary by at least 0.12<br><br>Ensure all reviews sound natural, match the specified tone, and align with user-written content from the specified period. |
 
 ---
-
-
 # Dataset Description
-
 Each CSV file contains the GPT-generated reviews together with calculated metrics during the experiments.
 
 | Variable | Description |
@@ -175,3 +172,18 @@ Each CSV file contains the GPT-generated reviews together with calculated metric
 | prediction_roberta | RoBERTa prediction |
 
 ---
+
+## Impact on Fake Review Detection
+Figures 9 and 10 show detection performance of RoBERTa, Logistic Regression, and XGBoost across prompt configurations.
+
+<p align="center">
+  <img src="classification_performance_roberta_22configurations.png" alt="classification performance RoBERTa" width="900">
+</p>
+
+*Figure 9. Fake review detection performance of pretrained RoBERTa.*
+
+<p align="center">
+  <img src="classification_performance_LR_XGBoost_22configurations.png" alt="classification performance LR XGBoost" width="900">
+</p>
+
+*Figure 10. Fake review detection performance of Logistic Regression and XGBoost under unconstrained baseline training (a), mean-length-constrained training (c), and mean-length- and dispersion-constrained training (d).*
