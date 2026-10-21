@@ -213,3 +213,9 @@ Figure 11 illustrates cosine similarity between embeddings of authentic and gene
 </p>
 
 *Figure 11. Evolution of average cosine embedding similarities between authentic and generated reviews and among generated reviews across the 44 iterations.*
+
+<p align="center">
+  <img src="tf_idf_summary_vis.png" alt="tf idf similarities" width="900">
+</p>
+
+*Figure 12. Evolution of tf idf similarities between authentic and generated reviews, among authentic reviews, and among generated reviews across the 44 iterations.*
