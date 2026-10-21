@@ -117,8 +117,9 @@ Figure 8 shows that genuine reviews became progressively easier to read, as indi
 
 # Combining Best Practices Experiment
 
-The final experiment consists of multiple prompt engineering iterations. Each iteration incrementally extends the prompt by incorporating additional best-performing prompt components identified in previous experiments.
-Per-rating parameterization
+In our final experiment, we tested 11 configurations with and without Meta-Prompting, using two iterations per condition. Each iteration incrementally extends the prompt by incorporating additional best-performing prompt components identified in previous experiments. This resulted in 44 iterations and 22,000 generated reviews. All configurations used rating-specific prompts.
+Iterations 0 and 1 served as baselines. Iterations 2–5 incorporated textual constraints, including the mean, minimum, maximum, and standard deviation of sentence count. Iterations 6–11 added readability constraints, initially targeting mean FKGL and then combining FKGL with CLI and adding their minimum, maximum, and standard deviation. Since addressing FKGL alone produced closer alignment, subsequent iterations retained only FKGL. Iterations 12–17 added neutral sentiment constraints, including a verbal explanation and dispersion parameters, while the final two iterations in this block also targeted the mean, minimum, maxi-mum, and standard deviation of subjectivity. Iterations 18–21 additionally specified publication year, using either 2012, a year within the genuine dataset, or 2018, a year outside its range. Itera-tions 22–43 repeated the corresponding configurations from Iterations 0–21 using Meta-Prompting, whereby the model was instructed to revise the prompts for each rating to optimize the requested output characteristics. The table below shows example prompts for generating 1-star reviews in each iteration.
+
 | Iteration | Prompt modification | Example prompt (5-star review) |
 |-----------|---------------------|--------------------------------|
 | [`combined_prompt_00_gen_sampled.csv`](combined_prompt_00_gen_sampled.csv), [`combined_prompt_01_gen_sampled.csv`](combined_prompt_01_gen_sampled.csv)| Baseline prompt | *Write exactly 10 reviews of a 5-star experience.* |
