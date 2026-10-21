@@ -206,7 +206,7 @@ Figures 9 and 10 show detection performance of RoBERTa, Logistic Regression, and
 
 *Figure 10. Fake review detection performance of Logistic Regression and XGBoost under unconstrained baseline training (a), mean-length-constrained training (c), and mean-length- and dispersion-constrained training (d).*
 
-Figure 11 illustrates the evolution of the average cosine similarity of embeddings across the 44 iterations.
+Figure 11 illustrates cosine similarity between embeddings of authentic and generated reviews (Authentic–Generated) and within the generated reviews (Generated–Generated) across the 44 generation iterations. Authentic–Generated similarity increased substantially after the introduction of textual constraints and remained relatively stable thereafter, while Generated–Generated similarity remained consistently higher, indicating greater within-class semantic similarity among generated reviews.
 
 <p align="center">
   <img src="Evolution of average cosine embedding similarities.png" alt="average cosine embedding similarities" width="900">
