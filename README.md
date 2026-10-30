@@ -12,12 +12,12 @@ The study investigates whether **zero-shot prompt engineering** can be used to g
 
 *Figure 1. Experimental workflow of the study.*
 
-Due to the large number of experimental iterations and AI-generated fake reviews, this repository currently provides the **GPT-generated fake reviews** (GPT-4.1) together with all automatically extracted review metrics and accompanying documentation for the final **Combining Best Practices** experiment.
+Due to the large number of experimental iterations and AI-generated fake reviews, this repository currently provides the **GPT-generated fake reviews** (GPT-4.1) together with all automatically extracted review metrics and accompanying documentation for the final **Combining Best-performing Constraints** experiment.
 This experiment combines the best-performing prompt engineering strategies identified throughout the preceding experiments and serves as the final evaluation reported in the manuscript.
 
 For the preceding prompt engineering experiments, the repository provides **some visualizations and brief descriptions of the best-performing constraints** identified for each experiment. These materials document how the final prompt configurations were derived.
 
-The repository therefore provides the AI-generated fake reviews together with all calculated review metrics for each iteration of the **Combining Best Practices** experiment.
+The repository therefore provides the AI-generated fake reviews together with all calculated review metrics for each iteration of the **Combining Best-performing Constraints** experiment.
 
 
 ---
