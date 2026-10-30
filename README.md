@@ -17,8 +17,6 @@ This experiment combines the best-performing prompt engineering strategies ident
 
 For the preceding prompt engineering experiments, the repository provides **some visualizations and brief descriptions of the best-performing constraints** identified for each experiment. These materials document how the final prompt configurations were derived.
 
-The repository therefore provides the AI-generated fake reviews together with all calculated review metrics for each iteration of the **Combining Best-performing Constraints** experiment.
-
 
 ---
 
